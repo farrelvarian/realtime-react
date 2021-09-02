@@ -24,7 +24,7 @@ export const loginUser = (data, history, setSocket) => (dispatch) => {
       localStorage.setItem("image", image);
       localStorage.setItem("isAuth", isAuth);
 
-      const resultSocket = io("http://localhost:4000", {
+      const resultSocket = io(`${process.env.REACT_APP_BASE_URL}`, {
         query: { token: token },
       });
       setSocket(resultSocket);
@@ -137,7 +137,7 @@ console.log(image);
         toastify(`success update profile`, "success");
      })
      .catch((error) => {
-       toastify(`${error.response.statusText}`, "error");
+       toastify(error.response.statusText, "error");
      });
 };
 export const logoutUser = (history) => () => {
