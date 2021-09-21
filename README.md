@@ -28,10 +28,10 @@ E-commerce website focus on fashion that brings together sellers and customers. 
 
   <p align='center'>
   <span>
-      <image width="400" src='./screenshot/home fix.png' />
-      <image width="400" src='./screenshot/page-product fix.PNG' />
-      <image width="400" src='./screenshot/my-bag fix.PNG' />
-      <image width="400" src='./screenshot/my-product fix.PNG' />
+      <image width="400" src='./screenshot/login fix.png' />
+      <image width="400" src='./screenshot/search fix.PNG' />
+      <image width="400" src='./screenshot/chatroom fix.PNG' />
+      <image width="400" src='./screenshot/profile fix.PNG' />
      
 
 ## Built With
@@ -49,11 +49,11 @@ E-commerce website focus on fashion that brings together sellers and customers. 
 4. Responsive
 5. Image upload, filter type, max min file size
 6. Navigation handling
-7. Backend API E-commerce [`here`](https://github.com/farrelvarian/backendE-commerce)
+7. Backend API E-commerce [`here`](https://github.com/farrelvarian/backend-realtime)
 
 ## Getting Started
 
-1. Download this Project or you can type `https://github.com/farrelvarian/backend-realtime`
+1. Download this Project or you can type `https://github.com/farrelvarian/realtime-react`
 2. Open app's directory in CMD or Terminal
 3. Type `npm install` or `yarn install`
 4. Add .env file at root folder project
