@@ -1,4 +1,4 @@
-<h1 align='center'>React JS - Blanja E-commerce</h1>
+<h1 align='center'>React JS - Telegram Realtime-Chat</h1>
   <p align="center">
 <!--     <a href="link_deploy">View Demo</a> -->
     ·
