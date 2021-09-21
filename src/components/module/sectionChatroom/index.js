@@ -5,13 +5,17 @@ import {
   send,
   sticker,
   videoCall,
+  // back,
 } from "../../../assets";
+// import { breakpoints } from "../../../configs/breakpoints/breakpoints";
 
 const SectionChatroom = (props) => {
+
   return (
     <StyledSectionChatroom>
       <div className="wrapper-header">
         <div className="wrapper-profile">
+          {/* <img className="back" src={back} alt="back" onClick={props.back} /> */}
           <img className="avatar" src={props.avatar} alt="avatar" />
           <div className="wrapper-text">
             <h1 className="header-name">{props.username}</h1>
@@ -19,7 +23,11 @@ const SectionChatroom = (props) => {
           </div>
         </div>
         <button>
-          <img src={profileMenu} alt="profile-menu" onClick={props.profileMenu}/>
+          <img
+            src={profileMenu}
+            alt="profile-menu"
+            onClick={props.profileMenu}
+          />
         </button>
       </div>
       <div className="body-chat">{props.children}</div>
@@ -67,7 +75,8 @@ export const StyledSectionChatroom = styled.div`
     .wrapper-profile {
       display: flex;
       align-items: center;
-      img {
+     
+      img.avatar {
         width: 64px;
         height: 64px;
         border-radius: 20px;

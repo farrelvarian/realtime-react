@@ -35,7 +35,7 @@ const Home = ({ socket, ...props }) => {
         if (data.sender_id === contact.id) {
           setMessages((currentValue) => [...currentValue, data]);
         } else {
-          toastify(`${data.sender_id}-> ${data.message}`, "warning");
+          toastify(`${data.sender_name}-> ${data.message}`, "warning");
         }
       });
     }
@@ -53,7 +53,7 @@ const Home = ({ socket, ...props }) => {
         setContacts(dataContacts);
       })
       .catch((error) => {
-        toastify(`${error.response.statusText}`, "error");
+       toastify(error.response.data.message, "error");
       });
   }, [Refresh]);
 
@@ -103,6 +103,7 @@ const Home = ({ socket, ...props }) => {
   return (
     <StyledHome>
       <SidebarMain
+  
         editProfile={editUser}
         logout={logoutUser}
         onChange={(e) => handleSearch(e)}

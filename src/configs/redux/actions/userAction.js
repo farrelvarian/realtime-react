@@ -37,7 +37,7 @@ export const loginUser = (data, history, setSocket) => (dispatch) => {
     })
     .catch((error) => {
       console.log(error);
-        toastify(error.response.data.message, "error");
+        toastify(error.response?.data?.message, "error");
     });
 };
 export const registerUser = (data, history) => (dispatch) => {
@@ -58,7 +58,7 @@ export const registerUser = (data, history) => (dispatch) => {
       history.push(`/login`);
     })
     .catch((error) => {
-      toastify(error.response.data.message, "error");
+      toastify(error.response?.data?.message, "error");
     });
 };
 
@@ -81,7 +81,7 @@ export const forgotPasswordUser = (data,history) => (dispatch) => {
       history.push(`/login`);
     })
     .catch((error) => {
-      toastify(error.response.data.message, "error");
+      toastify(error.response?.data?.message, "error");
     });
 };
 
@@ -102,7 +102,7 @@ export const resetPasswordUser = (data, token, history) => (dispatch) => {
       history.push(`/login`);
     })
     .catch((error) => {
-      toastify(error.response.data.message, "error");
+      toastify(error.response?.data?.message, "error");
     });
 };
 
@@ -137,7 +137,8 @@ console.log(image);
         toastify(`success update profile`, "success");
      })
      .catch((error) => {
-       toastify(error.response.statusText, "error");
+       console.log(error.response.data);
+       toastify(error.response.data.message, "error");
      });
 };
 export const logoutUser = (history) => () => {

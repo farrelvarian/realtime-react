@@ -76,7 +76,7 @@ const EditProfile = () => {
                 history.push(`/login`);
               })
               .catch((error) => {
-                toastify(`${error.response.statusText}`, "error");
+                toastify(error.response.data.message, "error");
               }),
         },
         {
