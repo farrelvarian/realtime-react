@@ -28,7 +28,7 @@ E-commerce website focus on fashion that brings together sellers and customers. 
 
   <p align='center'>
   <span>
-      <image width="400" src='./screenshot/login fix.png' />
+      <image width="400" src='./screenshot/login fix.PNG' />
       <image width="400" src='./screenshot/search fix.PNG' />
       <image width="400" src='./screenshot/chatroom fix.PNG' />
       <image width="400" src='./screenshot/profile fix.PNG' />
