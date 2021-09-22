@@ -39,6 +39,7 @@ const EditProfile = () => {
       .get(`${process.env.REACT_APP_BASE_URL}users/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
+          withCredentials: true,
         },
       })
       .then((response) => {
@@ -68,6 +69,7 @@ const EditProfile = () => {
               .delete(`${process.env.REACT_APP_BASE_URL}users/${id}`, {
                 headers: {
                   Authorization: `Bearer ${token}`,
+                  withCredentials: true,
                 },
               })
               .then((response) => {

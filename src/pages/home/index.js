@@ -46,6 +46,7 @@ const Home = ({ socket, ...props }) => {
       .get(`${process.env.REACT_APP_BASE_URL}users${search}`, {
         headers: {
           Authorization: `Bearer ${token}`,
+          withCredentials: true,
         },
       })
       .then((result) => {
@@ -53,7 +54,7 @@ const Home = ({ socket, ...props }) => {
         setContacts(dataContacts);
       })
       .catch((error) => {
-       toastify(error.response.data.message, "error");
+        toastify(error.response.data.message, "error");
       });
   }, [Refresh]);
 
@@ -67,6 +68,7 @@ const Home = ({ socket, ...props }) => {
         .get(`${process.env.REACT_APP_BASE_URL}messages/${contact.id}`, {
           headers: {
             authorization: `Bearer ${token}`,
+            withCredentials: true,
           },
         })
         .then((res) => {
