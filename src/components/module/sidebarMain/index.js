@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { editProfile, logout, menu, plus, search } from "../../../assets";
+import { breakpoints } from "../../../configs/breakpoints/breakpoints";
 
 const SidebarMain = (props) => {
   return (
-    <StyledSidebarMain>
+    <StyledSidebarMain className={props.display ? "sidebarClosed" : ""}>
       <div className="wrapper-mainmenu">
         <h1>Telegram</h1>
         <div className="dropdown">
@@ -22,7 +23,12 @@ const SidebarMain = (props) => {
       </div>
       <div className="wrapper-search">
         <img className="search" src={search} alt="search" />
-        <input type="text" name="search" placeholder="Type the name..." onChange={props.onChange}/>
+        <input
+          type="text"
+          name="search"
+          placeholder="Type the name..."
+          onChange={props.onChange}
+        />
         <button>
           <img src={plus} alt="plus" />
         </button>
@@ -39,7 +45,12 @@ const SidebarMain = (props) => {
 
 export default SidebarMain;
 
-export const StyledSidebarMain = styled.div`
+export const StyledSidebarMain = styled.div.attrs((props) => ({
+  className: props.className,
+}))`
+  ${breakpoints.lessThan("lg")`width:100%;
+   `}
+
   width: 25%;
   background-color: #ffffff;
   display: flex;
@@ -70,7 +81,7 @@ export const StyledSidebarMain = styled.div`
         background-color: transparent;
       }
       .dropdown-content {
-        margin-right:0px;
+        margin-right: 0px;
         border-radius: 15px;
         padding: 15px;
         gap: 30px;
@@ -169,4 +180,5 @@ export const StyledSidebarMain = styled.div`
     overflow-y: auto;
     width: 90%;
   }
+
 `;

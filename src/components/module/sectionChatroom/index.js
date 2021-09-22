@@ -5,17 +5,17 @@ import {
   send,
   sticker,
   videoCall,
-  // back,
+  back,
 } from "../../../assets";
-// import { breakpoints } from "../../../configs/breakpoints/breakpoints";
+import { breakpoints } from "../../../configs/breakpoints/breakpoints";
 
 const SectionChatroom = (props) => {
 
   return (
-    <StyledSectionChatroom>
+    <StyledSectionChatroom className={props.display?"mobileShow":""}>
       <div className="wrapper-header">
         <div className="wrapper-profile">
-          {/* <img className="back" src={back} alt="back" onClick={props.back} /> */}
+          <img className="back" src={back} alt="back" onClick={props.back} />
           <img className="avatar" src={props.avatar} alt="avatar" />
           <div className="wrapper-text">
             <h1 className="header-name">{props.username}</h1>
@@ -57,7 +57,13 @@ const SectionChatroom = (props) => {
 
 export default SectionChatroom;
 
-export const StyledSectionChatroom = styled.div`
+export const StyledSectionChatroom = styled.div.attrs((props) => ({
+  className: props.className,
+}))`
+  ${breakpoints.lessThan("lg")`display:none;
+  width:0%;
+    `}
+
   width: 75%;
   height: 100%;
   display: flex;
@@ -65,7 +71,7 @@ export const StyledSectionChatroom = styled.div`
   justify-content: center;
   background-color: #fafafa;
   .wrapper-header {
-    width: 100%-104px;
+    width: calc(100% - 104px);
     height: 120px;
     display: flex;
     align-items: center;
@@ -75,8 +81,12 @@ export const StyledSectionChatroom = styled.div`
     .wrapper-profile {
       display: flex;
       align-items: center;
-     
-      img.avatar {
+      img.back {
+        display: none;
+        ${breakpoints.lessThan("lg")`display:block;
+    `}
+      }
+      img {
         width: 64px;
         height: 64px;
         border-radius: 20px;
@@ -122,13 +132,13 @@ export const StyledSectionChatroom = styled.div`
     flex-direction: column;
     justify-content: flex-end;
     overflow-y: auto;
-    width: 100%-104px;
-    height: 100%;
+    width: calc(100% - 104px);
+    height: calc(100vh - 240px);
     gap: 20px;
     padding: 0 52px;
   }
   .wrapper-footer {
-    width: 100%-104px;
+    width: calc(100% - 104px);
     height: 120px;
     display: flex;
     align-items: center;

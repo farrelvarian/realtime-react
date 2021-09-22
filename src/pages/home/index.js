@@ -17,6 +17,7 @@ import ScrollToBottom from "react-scroll-to-bottom";
 const Home = ({ socket, ...props }) => {
   const [search, setSearch] = useState("");
   const [Refresh, setRefresh] = useState(false);
+  const [Display, setDisplay] = useState(false);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [contacts, setContacts] = useState([]);
@@ -27,6 +28,11 @@ const Home = ({ socket, ...props }) => {
 
   const history = useHistory();
   console.log(search);
+
+  const handleShowMsg = async (item) => {
+    setContact(item);
+    setDisplay(true);
+  };
 
   useEffect(() => {
     if (socket && contact) {
@@ -103,7 +109,7 @@ const Home = ({ socket, ...props }) => {
   return (
     <StyledHome>
       <SidebarMain
-  
+        display={Display}
         editProfile={editUser}
         logout={logoutUser}
         onChange={(e) => handleSearch(e)}
@@ -113,12 +119,14 @@ const Home = ({ socket, ...props }) => {
             image={item.image ? item.image : avatar}
             name={item.name}
             message={item.socket_id === "-" ? "offline" : "online"}
-            onClick={() => setContact(item)}
+            onClick={() => handleShowMsg(item)}
           />
         ))}
       </SidebarMain>
       {contact ? (
         <SectionChatroom
+        back={()=>setDisplay(false)}
+          display={Display}
           profileMenu={() => setProfile(true)}
           avatar={contact.image ? contact.image : avatar}
           username={contact.name}

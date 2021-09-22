@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../../configs/breakpoints/breakpoints";
 
 const SectionBlank = () => {
     return (
@@ -11,13 +12,14 @@ const SectionBlank = () => {
 export default SectionBlank;
 
 export const StyledSectionBlank = styled.div`
+  ${breakpoints.lessThan("lg")`display:none`}
   width: 75%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:#FAFAFA;
-   h1 {
+  background-color: #fafafa;
+  h1 {
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
