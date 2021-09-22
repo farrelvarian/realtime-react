@@ -45,8 +45,7 @@ const Home = ({ socket, ...props }) => {
     axios
       .get(`${process.env.REACT_APP_BASE_URL}users${search}`, {
         headers: {
-          Authorization: `Bearer ${token}`,
-          withCredentials: true,
+          Authorization: `Bearer ${token}`
         },
       })
       .then((result) => {
@@ -68,7 +67,6 @@ const Home = ({ socket, ...props }) => {
         .get(`${process.env.REACT_APP_BASE_URL}messages/${contact.id}`, {
           headers: {
             authorization: `Bearer ${token}`,
-            withCredentials: true,
           },
         })
         .then((res) => {

@@ -4,9 +4,7 @@ const axios = require("axios");
 
 export const loginUser = (data, history, setSocket) => (dispatch) => {
   axios
-    .post(`${process.env.REACT_APP_BASE_URL}auth/login`, data, {
-      withCredentials: true,
-    })
+    .post(`${process.env.REACT_APP_BASE_URL}auth/login`, data)
     .then((result) => {
       const token = result.data.data.token;
       const id = result.data.data.id;
@@ -30,7 +28,7 @@ export const loginUser = (data, history, setSocket) => (dispatch) => {
         `${process.env.REACT_APP_BASE_URL}`,
         {
           query: { token: token },
-          withCredentials: true,
+       
         }
       );
       setSocket(resultSocket);
@@ -44,9 +42,7 @@ export const loginUser = (data, history, setSocket) => (dispatch) => {
 };
 export const registerUser = (data, history) => (dispatch) => {
   axios
-    .post(`${process.env.REACT_APP_BASE_URL}auth/register`, data, {
-      withCredentials: true,
-    })
+    .post(`${process.env.REACT_APP_BASE_URL}auth/register`, data)
     .then((result) => {
       const dataUser = {
         data: result.data.data,
@@ -68,9 +64,7 @@ export const registerUser = (data, history) => (dispatch) => {
 
 export const forgotPasswordUser = (data,history) => (dispatch) => {
   axios
-    .post(`${process.env.REACT_APP_BASE_URL}auth/forgotpassword`, data, {
-      withCredentials: true,
-    })
+    .post(`${process.env.REACT_APP_BASE_URL}auth/forgotpassword`, data)
     .then((result) => {
       const dataUser = {
         data: result.data.data,
@@ -96,10 +90,7 @@ export const resetPasswordUser = (data, token, history) => (dispatch) => {
   axios
     .post(
       `${process.env.REACT_APP_BASE_URL}auth/resetPassword/${token}`,
-      data,
-      {
-        withCredentials: true,
-      }
+      data
     )
     .then((result) => {
       const dataUser = {
@@ -132,7 +123,6 @@ console.log(image);
      .put(`${process.env.REACT_APP_BASE_URL}users/${id}`, formData, {
        headers: {
          Authorization: `Bearer ${token}`,
-         withCredentials: true,
        },
      })
      .then((result) => {
