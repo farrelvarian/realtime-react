@@ -20,11 +20,10 @@ const Router = () => {
     if (token && !socket) {
       const resultSocket = io(`${process.env.REACT_APP_BASE_URL}`, {
         query: {
-          token: localStorage.getItem("token"),
+          token: token,
         },
       });
-      resultSocket.on();
-
+      // resultSocket.on();
       setSocket(resultSocket);
       console.log(token);
     }
