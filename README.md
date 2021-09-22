@@ -10,7 +10,7 @@
 
 ## About The Project
 
-E-commerce website focus on fashion that brings together sellers and customers. It has search, sort, product detail and my bag features for customers as well as add, update and delete products for sellers. Built using ReactJS, ExpressJS and MySQL.
+A realtime chat website that allows users to communicate via chat in real time. It has search, chat, and user profile features for users. Built using ReactJS, ExpressJS, MySQL and Socket.io.xpressJS and MySQL.
 
 <p align='center'>
    ·
@@ -28,7 +28,7 @@ E-commerce website focus on fashion that brings together sellers and customers. 
 
   <p align='center'>
   <span>
-      <image width="400" src='./screenshot/login fix.png' />
+      <image width="400" src='./screenshot/login fix.PNG' />
       <image width="400" src='./screenshot/search fix.PNG' />
       <image width="400" src='./screenshot/chatroom fix.PNG' />
       <image width="400" src='./screenshot/profile fix.PNG' />
