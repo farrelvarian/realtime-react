@@ -28,10 +28,13 @@ A realtime chat website that allows users to communicate via chat in real time. 
 
   <p align='center'>
   <span>
-      <image width="400" src='./screenshot/login fix.PNG' />
-      <image width="400" src='./screenshot/search fix.PNG' />
-      <image width="400" src='./screenshot/chatroom fix.PNG' />
-      <image width="400" src='./screenshot/profile fix.PNG' />
+      <image width="400" src='./screenshot/1.jpeg' />
+      <image width="400" src='./screenshot/2.jpeg' />
+      <image width="400" src='./screenshot/3.jpeg' />
+      <image width="400" src='./screenshot/4.PNG' />
+      <image width="400" src='./screenshot/5.PNG' />
+      <image width="400" src='./screenshot/6.PNG' />
+      <image width="400" src='./screenshot/7.PNG' />
      
 
 ## Built With
