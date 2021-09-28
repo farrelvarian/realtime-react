@@ -30,7 +30,7 @@ A realtime chat website that allows users to communicate via chat in real time. 
   <span>
       <image width="400" src='./screenshot/1.jpeg' />
       <image width="400" src='./screenshot/2.jpeg' />
-      <image width="400" src='./screenshot/3.jpeg' />
+      <image width="400" height="251" src='./screenshot/3.jpeg' />
       <image width="400" src='./screenshot/4.PNG' />
       <image width="400" src='./screenshot/5.PNG' />
       <image width="400" src='./screenshot/6.PNG' />
